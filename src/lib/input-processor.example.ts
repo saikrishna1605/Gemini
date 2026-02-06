@@ -9,7 +9,7 @@ import {
   MultimodalInputProcessor,
   defaultInputProcessor,
 } from './input-processor';
-import { MultimodalInput, IconSequence } from './accessibility';
+import { MultimodalInput, IconSequence, AudioBlob, ImageBlob, VideoBlob } from './accessibility';
 
 // ============================================================================
 // Example 1: Processing Text Input
