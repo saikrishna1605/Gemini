@@ -88,7 +88,7 @@ async function processIconInput() {
 async function processCameraInput(imageBlob: Blob) {
   const cameraInput: MultimodalInput = {
     type: 'camera',
-    content: imageBlob,
+    content: imageBlob as ImageBlob,
     timestamp: new Date(),
     metadata: {
       captureMode: 'text-recognition',
@@ -112,7 +112,7 @@ async function processCameraInput(imageBlob: Blob) {
 async function processSignInput(videoBlob: Blob) {
   const signInput: MultimodalInput = {
     type: 'sign',
-    content: videoBlob,
+    content: videoBlob as VideoBlob,
     timestamp: new Date(),
     metadata: {
       duration: 5000, // 5 seconds
