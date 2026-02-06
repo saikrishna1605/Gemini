@@ -290,21 +290,20 @@ export async function requestCameraAccess(
     throw new Error('Camera access is not supported in this browser');
   }
 
-  const constraints: MediaStreamConstraints = {
-    video: {
-      facingMode: config.facingMode || 'environment',
-      width: config.resolution?.width || { ideal: 1920 },
-      height: config.resolution?.height || { ideal: 1080 },
-    },
+  const videoConstraints: MediaTrackConstraints = {
+    facingMode: config.facingMode || 'environment',
+    width: config.resolution?.width || { ideal: 1920 },
+    height: config.resolution?.height || { ideal: 1080 },
   };
 
   // Add device ID if specified
   if (config.deviceId) {
-    constraints.video = {
-      ...constraints.video,
-      deviceId: { exact: config.deviceId },
-    };
+    videoConstraints.deviceId = { exact: config.deviceId };
   }
+
+  const constraints: MediaStreamConstraints = {
+    video: videoConstraints,
+  };
 
   try {
     return await navigator.mediaDevices.getUserMedia(constraints);

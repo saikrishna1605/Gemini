@@ -36,7 +36,7 @@ async function processTextInput() {
 async function processVoiceInput(audioBlob: Blob) {
   const voiceInput: MultimodalInput = {
     type: 'voice',
-    content: audioBlob,
+    content: audioBlob as AudioBlob,
     timestamp: new Date(),
     metadata: {
       language: 'en-US',
