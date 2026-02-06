@@ -233,7 +233,8 @@ export function buildSentence(
   const allWords = [...iconLabels, ...phrases];
   
   // Analyze categories
-  const categories = [...new Set(icons.map(icon => icon.category as AACCategory))];
+  const categorySet = new Set(icons.map(icon => icon.category as AACCategory));
+  const categories = Array.from(categorySet);
   
   // Build sentences at different complexity levels
   const short = buildShortSentence(allWords, categories);

@@ -235,7 +235,7 @@ export type CameraState =
 export function isCameraSupported(): boolean {
   return !!(
     navigator.mediaDevices &&
-    navigator.mediaDevices.getUserMedia &&
+    typeof navigator.mediaDevices.getUserMedia === 'function' &&
     navigator.mediaDevices.enumerateDevices
   );
 }
