@@ -9,7 +9,7 @@
  * Requirements: 2.1, 2.2
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   AACVoiceBuilder,
   AACIcon,

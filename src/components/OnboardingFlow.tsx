@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAccessibility } from './AccessibilityProvider';
-import { AccessibilityPreferences } from '@/lib/accessibility';
 import { announceToScreenReader, handleKeyboardNavigation } from '@/lib/accessibility';
 
 interface OnboardingFlowProps {

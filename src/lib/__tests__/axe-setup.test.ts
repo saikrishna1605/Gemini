@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
 /**
  * Unit tests for axe-core setup and configuration
  * Tests the automated accessibility testing configuration

@@ -73,6 +73,7 @@ export function AccessibilityProvider({ children }: AccessibilityProviderProps) 
     };
 
     loadLocalPreferences();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Sync with Firebase when user logs in

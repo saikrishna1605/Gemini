@@ -7,12 +7,14 @@
  * Requirements: 2.1, 3.1
  */
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 'use client';
 
 import React, { useState } from 'react';
 import { StyledAudioInput } from './AudioInput';
 import { useAudioInput } from '@/hooks/useAudioInput';
-import { PreprocessedAudio, AudioRecordingState } from '@/lib/audio-processor';
+import { PreprocessedAudio } from '@/lib/audio-processor';
 
 // ============================================================================
 // Example 1: Basic Audio Input
@@ -149,7 +151,6 @@ export function AudioInputHookExample() {
 
 export function VoiceMessageRecorder() {
   const [messages, setMessages] = useState<PreprocessedAudio[]>([]);
-  const [currentState, setCurrentState] = useState<AudioRecordingState>('idle');
 
   const handleAudioCapture = (audio: PreprocessedAudio) => {
     setMessages((prev) => [...prev, audio]);
@@ -164,7 +165,6 @@ export function VoiceMessageRecorder() {
         minDuration={0.5}
         showQualityFeedback={true}
         onAudioCapture={handleAudioCapture}
-        onStateChange={setCurrentState}
       />
 
       <div style={{ marginTop: '2rem' }}>

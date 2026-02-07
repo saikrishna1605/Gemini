@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
 /**
  * Unit tests for accessibility utilities
  * Tests the core accessibility configuration and helper functions

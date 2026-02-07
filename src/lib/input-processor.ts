@@ -242,7 +242,7 @@ class IconInputProcessor implements InputProcessor {
         timestamp: new Date(),
         iconCount: iconSeq.icons.length,
         phraseCount: phrases.length,
-        categories: [...new Set(iconSeq.icons.map((i) => i.category))],
+        categories: Array.from(new Set(iconSeq.icons.map((i) => i.category))),
       },
     };
   }
